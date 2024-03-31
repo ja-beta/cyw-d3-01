@@ -1,0 +1,23 @@
+body{
+    /* background-color: rgb(233, 233, 230); */
+    
+}
+
+#wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+#svg-one{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+svg{
+    overflow: visible !important;
+}
+

@@ -1,4 +1,4 @@
-d3.csv(".assets/brooklyn-neighborhoods-00.csv").then(data => {
+d3.csv("assets/brooklyn-neighborhoods-00.csv").then(data => {
   console.log("Data loaded", data);
 
     const petalPath = "m 0,-3 C -10,-10 -10,-80 0,-20 C 10,-80 10,-10 0,-3";

@@ -1,36 +1,6 @@
-//#region OLD CODE (d3-00)
-// var spaceCircles = [30, 70, 110];
-
-// var svgContainer = d3.select("body").append("svg")
-//                                     .attr("width", 200)
-//                                     .attr("height", 200);
-
-// var circles = svgContainer.selectAll("circle")
-//                           .data(spaceCircles)
-//                           .enter()
-//                           .append("circle");
-
-// var circleAttributes = circles
-//                        .attr("cx", function (d) { return d; })
-//                        .attr("cy", function (d) { return d; })
-//                        .attr("r", 24 )
-//                        .style("fill", function(d) {
-                         
-//                          var returnColor;
-                         
-//                          if (d === 30) { returnColor = "green";
-//                          } else if (d === 70) { returnColor = "purple";
-//                          } else if (d === 110) { returnColor = "red"; }
-                         
-//                          return returnColor;
-//                        });
-
-//#endregion
-
 d3.csv("/assets/brooklyn-neighborhoods-00.csv").then(data => {
   console.log("Data loaded", data);
 
-  // const petalPath = "m 0,0 C -10,-10 -10,-40 0,-40 C 10,-40 10,-10 0,0";
     const petalPath = "m 0,-3 C -10,-10 -10,-80 0,-20 C 10,-80 10,-10 0,-3";
 
   const petalSize = 100;
@@ -66,7 +36,6 @@ d3.csv("/assets/brooklyn-neighborhoods-00.csv").then(data => {
 
   d3.select('#svg-one').attr('height', svgHeight);
   d3.select('#svg-one').attr('width', svgWidth);
-  // d3.select('#svg-one').attr('transform', "translate(0, 50)");
 
 
   const flowers = mainGroup
@@ -74,8 +43,6 @@ d3.csv("/assets/brooklyn-neighborhoods-00.csv").then(data => {
       .data(flowersData)
       .enter()
       .append('g')
-      // .attr('transform', (d, i) => `translate(${(i%5) * petalSize}, ${Math.floor(i/5)*petalSize})scale(${d.petSize})`);
-      // .attr('transform', (d, i) => `translate(${(i % 5) * petalSize}, ${Math.floor(i / 5) * petalSize})`);
       .attr('transform', (d, i) => {
         const column = i % numColumns;
         const row = Math.floor(i / numColumns);
